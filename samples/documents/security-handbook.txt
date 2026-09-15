@@ -1,0 +1,6 @@
+Northwind Trail Outfitters Security Handbook
+
+Team members must use multi-factor authentication for administrative accounts.
+Security incidents should be reported to the on-call security lead immediately.
+Customer documents must not be copied into public chat systems or personal
+cloud storage.

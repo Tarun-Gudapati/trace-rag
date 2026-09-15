@@ -1,0 +1,36 @@
+@host = http://localhost:5080
+
+### Health
+GET {{host}}/health
+Accept: application/json
+
+### Ingest a plain-text document
+POST {{host}}/api/documents
+Content-Type: application/json
+
+{
+  "id": "return-policy",
+  "title": "Return policy",
+  "content": "Customers may request a refund within 30 calendar days of purchase. A receipt or order number is required. Final-sale items cannot be returned."
+}
+
+### Ask a supported question
+POST {{host}}/api/ask
+Content-Type: application/json
+
+{
+  "question": "What is the refund window?",
+  "maxResults": 5
+}
+
+### Ask a question the document does not support
+POST {{host}}/api/ask
+Content-Type: application/json
+
+{
+  "question": "Where is the lunar research laboratory?"
+}
+
+### OpenAPI document
+GET {{host}}/openapi/v1.json
+Accept: application/json
